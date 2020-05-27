@@ -145,17 +145,17 @@ const  App= () => {
 };
 const styles = StyleSheet.create({
   marker:{
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     borderRadius: 90,
-    backgroundColor: "rgba(130,4,150, 0.3)",
-    borderWidth: 5,
-    borderColor: "rgba(130,4,150, 0.5)",
+    backgroundColor: "rgba(1300,40,15, 0.3)",
+    borderWidth: 3,
+    borderColor: "rgba(1300,40,15, 0.5)",
   },
   ma: {
     width:30,
     height:30,
-    backgroundColor:"#fff"
+    
   },
 });
 

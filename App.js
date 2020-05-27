@@ -86,7 +86,8 @@ const  App= () => {
       <MapView
         region={region}
         style={{ flex: 1 }}
-        
+        showsTraffic
+        provider="google"
         customMapStyle={mapStyle}
         onRegionChangeComplete={onRegionChangeComplete}
       >
@@ -152,9 +153,9 @@ const styles = StyleSheet.create({
     borderColor: "rgba(130,4,150, 0.5)",
   },
   ma: {
-    width:30,
-    height:36,
-    
+    width:20,
+    height:20,
+    backgroundColor:"#fff"
   },
 });
 

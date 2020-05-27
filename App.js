@@ -4,7 +4,7 @@ import MapView, { Marker } from "react-native-maps";
 import mapStyle from "./styles/mapStyle.json"
 import Constants from "expo-constants";
 import * as Location from "expo-location";
-import beok from "./styles/img.json";
+import book from "./styles/img.json";
 import { Icon } from "react-native-elements";
 import metroJson from "./json/metro.json"
 import axios from "axios";
@@ -33,8 +33,8 @@ const  App= () => {
 
   const onRegionChangeComplete = (rgn) => {
     if (
-      Math.abs(rgn.latitude - region.latitude) > 0.0002 ||
-      Math.abs(rgn.longitude - region.longitude) > 0.0002
+      Math.abs(rgn.latitude - region.latitude) > 0.002 ||
+      Math.abs(rgn.longitude - region.longitude) > 0.002
     ) {
       setRegion(rgn);
       setOnCurrentLocation(false);
@@ -97,7 +97,7 @@ const  App= () => {
             title={marker.name}
             description={marker.address}
           >
-           <Image style={styles.marker} source={{url:beok[0].marker}}/>
+           <Image style={styles.marker} source={{url:book[0].marker}}/>
           </Marker>
         }
     {metro.map((site) => (
@@ -107,7 +107,7 @@ const  App= () => {
           title={site.name}
           description={site.address}
         >
-           <Image style={styles.ma} source={{uri:beok[0].mrt}} />
+           <Image style={styles.ma} source={{uri:book[0].mrt}} />
            </Marker>
     ))}
      {ubike.map((site) => (
@@ -120,7 +120,7 @@ const  App= () => {
             title={`${site.sna} ${site.sbi}/${site.tot}`}
             description={site.ar}
           >
-            <Image style={styles.ma} source={{uri:beok[0].ubike}} />
+            <Image style={styles.ma} source={{uri:book[0].ubike}} />
            </Marker>
         ))}
       </MapView>
@@ -153,8 +153,8 @@ const styles = StyleSheet.create({
     borderColor: "rgba(130,4,150, 0.5)",
   },
   ma: {
-    width:20,
-    height:20,
+    width:30,
+    height:30,
     backgroundColor:"#fff"
   },
 });

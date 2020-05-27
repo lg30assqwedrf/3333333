@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "wkcproj",
-    "slug": "wkcproj",
+    "name": "map",
+    "slug": "map",
     "platforms": [
       "ios",
       "android",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#6043A0"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

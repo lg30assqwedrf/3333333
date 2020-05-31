@@ -6,13 +6,21 @@ import Constants from "expo-constants";
 import * as Location from "expo-location";
 import book from "./styles/img.json";
 import { Icon } from "react-native-elements";
+import { VictoryPie } from "victory-native";
+
 import metroJson from "./json/metro.json"
 import axios from "axios";
 
 const UBIKE_URL =
   "https://data.ntpc.gov.tw/api/datasets/71CD1490-A2DF-4198-BEF1-318479775E8A/json/preview";
 
+
+
+  const dataColor = ["#FFA600", "#00BBFF"];
+
 const  App= () => {
+ 
+
   const [region,setRegion] = useState({
     longitude: 121.544637,
     latitude: 25.024624,
@@ -120,7 +128,18 @@ const  App= () => {
             title={`${site.sna} ${site.sbi}/${site.tot}`}
             description={site.ar}
           >
-            <Image style={styles.ma} source={{uri:book[0].ubike}} />
+              <VictoryPie
+           
+            data={[
+              {x:site.tot-site.sbi,y:100-(site.sbi/site.tot)*100},
+              
+              {x:site.sbi,y:(site.sbi/site.tot)*100},
+               ]}
+            radius={17}
+            colorScale={dataColor}
+            innerRadius={7}
+            labelRadius={10}
+            />
            </Marker>
         ))}
       </MapView>
@@ -145,17 +164,17 @@ const  App= () => {
 };
 const styles = StyleSheet.create({
   marker:{
-    width: 40,
-    height: 40,
+    width: 50,
+    height: 50,
     borderRadius: 90,
-    backgroundColor: "rgba(1300,40,15, 0.3)",
-    borderWidth: 3,
-    borderColor: "rgba(1300,40,15, 0.5)",
+    backgroundColor: "rgba(130,4,150, 0.3)",
+    borderWidth: 5,
+    borderColor: "rgba(130,4,150, 0.5)",
   },
   ma: {
     width:30,
     height:30,
-    
+    backgroundColor:"#fff"
   },
 });
 

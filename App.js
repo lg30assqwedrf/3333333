@@ -16,7 +16,7 @@ const UBIKE_URL =
 
 
 
-  const dataColor = ["#FFA600", "#00BBFF"];
+  const dataColor = ["#EB0000", "#00FF00"];
 
 const  App= () => {
  
